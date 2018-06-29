@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Journal</string>
+    <string name="delete">Delete</string>
+    <string name="delete_all">Delete All</string>
+    <string name="my_journal">My Journal</string>
+    <string name="sign_out">Sign out</string>
+    <string name="notes">Notes</string>
+    <string name="title">Title</string>
+</resources>

@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.softacles.myjournal"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    /*Support lbrary dependencies*/
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    /*Firebase authentication dependency*/
+    implementation 'com.google.firebase:firebase-auth:10.2.0'
+
+    /*Firebase authentication UI dependency*/
+    implementation 'com.firebaseui:firebase-ui-auth:3.3.0'
+
+    /*Espresso UI testing dependency*/
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestImplementation 'com.android.support:support-annotations:27.1.0'
+
+    /*Espresso recycler view testing dependency*/
+    androidTestImplementation ('com.android.support.test.espresso:espresso-contrib:2.2'){
+        exclude module: 'support-annotations'
+        exclude group: 'com.android.support',
+                module:'appcompat'
+        exclude group:'com.android.support',
+                module:'support-v4'
+        exclude module: 'recyclerview-v7'
+    }
+
+    /*Espresso intent testing dependency*/
+    androidTestImplementation 'com.android.support.test.espresso:espresso-intents:2.2.1'
+
+    /*Card view dependency*/
+    implementation 'com.android.support:cardview-v7:26.1.0'
+
+    /*Recycler view dependency*/
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+
+    /*Room dependency for database and its annotation*/
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+
+    /*Live data dependency for observing data changes in database and its annotation*/
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+
+    /*Firebase database dependency*/
+    implementation 'com.google.firebase:firebase-database:10.2.0'
+}
+
+apply plugin: 'com.google.gms.google-services'
